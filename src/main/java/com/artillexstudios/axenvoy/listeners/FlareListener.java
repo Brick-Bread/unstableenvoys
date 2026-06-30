@@ -1,5 +1,6 @@
 package com.artillexstudios.axenvoy.listeners;
 
+import com.artillexstudios.axapi.utils.Cooldown;
 import com.artillexstudios.axapi.utils.StringUtils;
 import com.artillexstudios.axenvoy.AxEnvoyPlugin;
 import com.artillexstudios.axenvoy.envoy.Envoy;
@@ -17,8 +18,12 @@ import org.bukkit.persistence.PersistentDataContainer;
 import org.bukkit.persistence.PersistentDataType;
 import org.jetbrains.annotations.NotNull;
 
+import java.time.Duration;
+import java.util.UUID;
+
 public class FlareListener implements Listener {
     public static final NamespacedKey KEY = new NamespacedKey(AxEnvoyPlugin.getInstance(), "rivalsenvoy");
+    private static final Cooldown<UUID> flareCooldown = Cooldown.create();
 
     @EventHandler
     private void onPlayerInteractEvent(@NotNull PlayerInteractEvent event) {
@@ -49,7 +54,13 @@ public class FlareListener implements Listener {
             return;
         }
 
+        if (flareCooldown.hasCooldown(event.getPlayer().getUniqueId())) {
+            event.getPlayer().sendMessage(StringUtils.formatToString(envoy.getConfig().PREFIX + envoy.getConfig().FLARE_COOLDOWN_MESSAGE));
+            return;
+        }
+
         if (envoy.start(event.getPlayer())) {
+            flareCooldown.addCooldown(event.getPlayer().getUniqueId(), Duration.ofSeconds(envoy.getConfig().FLARE_COOLDOWN).toMillis());
             if (event.getItem().getAmount() > 1) {
                 event.getItem().setAmount(event.getItem().getAmount() - 1);
             } else {

@@ -49,6 +49,9 @@ public class Messages extends AbstractConfig {
     @Key("messages.flare-disabled")
     public String FLARE_DISABLED = "This envoy''s flare is disabled!";
 
+    @Key("messages.flare-cooldown")
+    public String FLARE_COOLDOWN_MESSAGE = "This envoy''s flare is on cooldown!";
+
     @Key("messages.reload")
     public String RELOAD = "Reloaded! Took: %time% ms!";
 
