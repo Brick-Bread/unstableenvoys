@@ -518,4 +518,8 @@ public class Envoy {
     public ScheduledTask cancelTask() {
         return cancelTask;
     }
+
+    public void setCancelTask(ScheduledTask cancelTask) {
+        this.cancelTask = cancelTask;
+    }
 }

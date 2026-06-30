@@ -215,8 +215,9 @@ public class SpawnedCrate {
         }
 
         ScheduledTask task = this.parent.cancelTask();
-        if (task != null) {
+        if (this.parent.getSpawnedCrates().isEmpty() && task != null && !task.isCancelled()) {
             task.cancel();
+            this.parent.setCancelTask(null);
         }
         if (envoy != null) {
             boolean broadcast = envoy.getConfig().BROADCAST_COLLECT;
