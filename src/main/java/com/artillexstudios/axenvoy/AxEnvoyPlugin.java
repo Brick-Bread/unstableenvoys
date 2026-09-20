@@ -35,7 +35,6 @@ import org.bstats.bukkit.Metrics;
 import org.bukkit.Bukkit;
 import org.bukkit.NamespacedKey;
 import revxrsal.commands.bukkit.BukkitCommandHandler;
-import revxrsal.zapper.repository.Repository;
 
 import java.time.Duration;
 import java.time.Instant;
@@ -70,7 +69,6 @@ public final class AxEnvoyPlugin extends AxPlugin {
 
     @Override
     public void dependencies(DependencyManagerWrapper manager) {
-        manager.repository(Repository.jitpack());
         for (Libraries value : Libraries.values()) {
             manager.dependency(value.library());
         }
