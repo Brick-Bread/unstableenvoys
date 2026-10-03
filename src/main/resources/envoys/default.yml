@@ -46,7 +46,7 @@ random-spawn:
 
 # You can override messages from messages.yml. You need to put it exactly how it is in that file (For example, if it's prefix, you need to write prefix as the key).
 messages:
-  prefix: "<#00FFAA>&lAxEnvoy &7» "
+  prefix: "<#00FFAA>&lUnstableEnvoys &7» "
 
 time-format: 1
 

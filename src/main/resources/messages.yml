@@ -1,5 +1,5 @@
 messages:
-  prefix: "<#00FFAA>&lAxEnvoy &7» "
+  prefix: "<#00FFAA>&lUnstableEnvoys &7» "
   collect: "%player% collected a %crate% crate! But fear not, there is still %amount% left!"
   start:
     one: "An envoy event began! A crate spawned at %location%!"

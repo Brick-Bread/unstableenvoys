@@ -4,12 +4,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.artillexstudios.axenvoy</groupId>
-    <artifactId>AxEnvoy</artifactId>
+    <groupId>com.unstablemc.unstableenvoys</groupId>
+    <artifactId>UnstableEnvoys</artifactId>
     <version>2.6.0</version>
     <packaging>jar</packaging>
 
-    <name>AxEnvoy</name>
+    <name>UnstableEnvoys</name>
 
     <properties>
         <java.version>21</java.version>
@@ -45,24 +45,20 @@
                 <configuration>
                     <relocations>
                         <relocation>
-                            <pattern>org.bstats</pattern>
-                            <shadedPattern>com.artillexstudios.axenvoy.libs.bstats</shadedPattern>
-                        </relocation>
-                        <relocation>
                             <pattern>net.byteflux</pattern>
-                            <shadedPattern>com.artillexstudios.axenvoy.libs.libby</shadedPattern>
+                            <shadedPattern>com.unstablemc.unstableenvoys.libs.libby</shadedPattern>
                         </relocation>
                         <relocation>
                             <pattern>com.artillexstudios.axapi</pattern>
-                            <shadedPattern>com.artillexstudios.axenvoy.libs.axapi</shadedPattern>
+                            <shadedPattern>com.unstablemc.unstableenvoys.libs.axapi</shadedPattern>
                         </relocation>
                         <relocation>
                             <pattern>revxrsal.commands</pattern>
-                            <shadedPattern>com.artillexstudios.axenvoy.libs.lamp</shadedPattern>
+                            <shadedPattern>com.unstablemc.unstableenvoys.libs.lamp</shadedPattern>
                         </relocation>
                         <relocation>
                             <pattern>org.apache.commons.math3</pattern>
-                            <shadedPattern>com.artillexstudios.axenvoy.libs.axapi.libs.math3</shadedPattern>
+                            <shadedPattern>com.unstablemc.unstableenvoys.libs.axapi.libs.math3</shadedPattern>
                         </relocation>
                     </relocations>
                     <minimizeJar>false</minimizeJar>
@@ -137,11 +133,6 @@
             <artifactId>commons-math3</artifactId>
             <version>3.6.1</version>
             <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.bstats</groupId>
-            <artifactId>bstats-bukkit</artifactId>
-            <version>3.0.2</version>
         </dependency>
         <dependency>
             <groupId>com.sk89q.worldguard</groupId>
